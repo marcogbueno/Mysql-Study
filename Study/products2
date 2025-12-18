@@ -1,0 +1,23 @@
+CREATE TABLE products (
+    id NUMERIC PRIMARY KEY,
+    name VARCHAR(50),
+    description VARCHAR(100),
+    amount NUMERIC,
+    price NUMERIC,
+    weight NUMERIC,
+    weight_unit VARCHAR(10)
+);
+
+INSERT INTO products 
+(id, name, description, amount, price, weight, weight_unit) VALUES
+(1, 'Two-door wardrobe', 'Wooden wardrobe with two doors', 100, 80, 85, 'kg'),
+(2, 'Dining table', 'Six-seat dining table', 1000, 560, 120, 'kg'),
+(3, 'Towel holder', 'Bathroom towel holder', 10000, 5.50, 0.8, 'kg'),
+(4, 'Computer desk', 'Office computer desk', 350, 100, 25, 'kg'),
+(5, 'Chair', 'Comfortable chair', 3000, 210.64, 7, 'kg'),
+(6, 'Single bed', 'Single size bed', 750, 99, 30, 'kg');
+
+SELECT id, name
+FROM products
+WHERE amount > 1000
+  AND price < 100;

@@ -1,0 +1,24 @@
+-- Criação da tabela com a estrutura atualizada
+CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    amount INT,
+    price DECIMAL(10, 2),
+    cidade VARCHAR(100),
+    estado CHAR(2)
+);
+
+-- Inserção dos dados
+INSERT INTO products (id, name, amount, price, cidade, estado) VALUES
+(1, 'Two-door wardrobe', 100, 80.00, 'São Paulo', 'SP'),
+(2, 'dining table', 1000, 560.00, 'Rio de Janeiro', 'RJ'),
+(3, 'Towel holder', 10000, 560.00, 'Belo Horizonte', 'MG'),
+(4, 'computer desk', 350, 100.00, 'Curitiba', 'PR'),
+(5, 'chair', 3000, 210.64, 'Porto Alegre', 'RS'),
+(6, 'single bed', 750, 99.00, 'Salvador', 'BA');
+
+-- Consulta filtrada (Estoque > 99 e Preço < 110)
+SELECT id, name, amount, price, cidade, estado
+FROM products
+WHERE amount > 99 
+  AND price < 110.00;

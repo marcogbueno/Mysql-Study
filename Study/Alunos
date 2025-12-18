@@ -1,0 +1,21 @@
+-- 1. Criação da tabela ALUNOS
+CREATE TABLE ALUNOS (
+    matricula VARCHAR(10) PRIMARY KEY, -- Usamos VARCHAR para manter os zeros à esquerda (ex: 001)
+    RA VARCHAR(15) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    endereco VARCHAR(255),
+    genero VARCHAR(20),                -- Flexível para diferentes identidades em 2025
+    data_nascimento DATE               -- Formato padrão YYYY-MM-DD
+);
+
+-- Inserção de dados
+INSERT INTO ALUNOS (matricula, RA, nome, endereco, genero, data_nascimento) VALUES
+('001', 'RA12345', 'Ana Silva', 'Rua das Flores, 123', 'Feminino', '2005-03-15'),
+('003', 'RA12347', 'Carlos Lima', 'Av. Paulista, 900', 'Masculino', '2004-11-20'),
+('005', 'RA12349', 'Beatriz Souza', 'Rua Bahia, 45', 'Feminino', '2006-01-10'),
+('006', 'RA12350', 'Daniel Oliveira', 'Rua Amazonas, 30', 'Masculino', '2005-07-22'),
+('02540', 'RA99999', 'Mariana Costa', 'Rua Principal, 500', 'Feminino', '2003-05-30'),
+('010', 'RA12360', 'Alex Santos', 'Rua Chile, 10', 'Não-binário', '2005-12-12');
+
+-- Verificação da tabela criada
+SELECT * FROM ALUNOS;
